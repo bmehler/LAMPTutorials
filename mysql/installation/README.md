@@ -1,0 +1,48 @@
+LAMPTutorials: Installation von MySql 5.6 auf Ubuntu 14.04 Trusty Tahr
+======================================================================
+
+Im Zuge meiner Vorbereitung auf die MySQL-Developer Zertifizierung für MySQL 5.6 möchte ich hier kurz erklären wie man auf einem Ubuntu 14.04 die MySQL 5.6 Community Server Version installiert.
+
+Vorab möchte ich darauf hinweisen, dass bei mir die Installation über sudo apt-get install mysql-server-5.6 mysql-client-5.6 nicht funktionierte. Hierbei brach die Installation wie folgt ab:
+
+2014-04-21 11:50:07 0 [Warning] Using unique option prefix key_buffer instead of key_buffer_size is deprecated and will be removed in a future release. Please use the full name instead.
+ 2014-04-21 11:50:07 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+
+Nun überlegte ich wie ich noch auf meinem Ubuntu 14.04 MySQL 5.6 installieren könnte. Also kurz gegoogelt und e voila hier der Link: http://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/
+
+Schritt 1: Download des MySQL Apt Repositories
+==============================================
+Hier der Link: http://dev.mysql.com/downloads/repo/apt/ - das erste ist wie man sieht für Ubuntu 14.04
+
+Da ich auf einer Vagrant Umgebung arbeite habe ich mir das Repositoy über folgenden Link geladen:
+sudo wget -O mysql.deb http://dev.mysql.com/get/mysql-apt-config_0.2.1-1ubuntu14.04_all.deb
+
+Schritt 2: Das Repository installieren und updaten
+==================================================
+
+sudo dpkg -i mysql.deb
+
+sudo apt-get update
+
+Schritt 3: MySQL 5.6 installieren
+=================================
+
+sudo apt-get install mysql-server
+
+Während der Installation werdet Ihr nach der Version gefragt (5.6/5.7) und müsst euer Root password setzen.
+
+Schritt 4: Mit MySQL (Command-line) arbeiten
+============================================
+Damit Ihr nun Tabellen anlegen, ändern usw. könnt müsst ihr zuerst nachsehen ob der MySQL Server läuft. Dies könnt ihr mit dem Befehl: service mysql status überprüfen. Analog hierzu könnt ihr mit service mysql stop den Server stoppen, bzw. mit service mysql restart den Server neustarten.
+Wenn der MySQL Server nun läuft, gibt man im Terminal nach dem Prompt folgendes ein:
+
+shell> mysql -u root -p bzw. mysql -u root -p<password> (ohne Leer direkt hinter dem p)
+
+Im ersten Fall, werdet ihr nach dem Passwort gefragt (dieses hat ihr während der Installation eingegeben)
+
+Und schon seit ihr im Command-line Tool von MySQL.
+
+Nun könnt Ihr euch z. B. mit show databases; die aktuellen Datenbanken anzeigen lassen.
+Mit use database <database>; könnt Ihr eine Datenbank auswählen und euch mit show tables; die Tabellen dieser Datenbank anzeigen lassen. Nun setzt ihr ein SQL-Statement ab, welches z. B. so aussehen könnte SELECT * FROM user where host = 'localhost'\G;
+
+Ich wünsche euch viel Spass mit MySQL 5.6 und bedanke mich für eure Aufmerksamkeit.
