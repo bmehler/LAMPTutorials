@@ -39,7 +39,7 @@ Während der Installation wird man nach der Version gefragt (5.6/5.7) und man mu
 
 Schritt 4: Mit MySQL (Command-line) arbeiten
 --------------------------------------------
-Damit man Tabellen anlegen, ändern usw. kann, muss man zuerst nachsehen, ob der MySQL Server läuft. Dies kann man mit dem Befehl: `service mysql status` überprüfen. Analog hierzu kann ma mit `service mysql stop` den Server stoppen, bzw. mit `service mysql restart` den Server neustarten.
+Damit man Tabellen anlegen, ändern usw. kann, muss man zuerst nachsehen, ob der MySQL Server läuft. Dies kann man mit dem Befehl: `service mysql status` überprüfen. Analog hierzu kann man mit `service mysql stop` den Server stoppen, bzw. mit `service mysql restart` den Server neustarten.
 Wenn der MySQL Server nun läuft, gibt man im Terminal nach dem Prompt folgendes ein:
 
 `shell> mysql -u root -p bzw. mysql -u root -peuerpassword` (ohne Leer direkt hinter dem p)
@@ -48,7 +48,7 @@ Im ersten Fall, wird man nach dem Passwort gefragt (dieses wurde während der In
 
 Und schon erscheint das Command-line Tool von MySQL.
 
-Nun kann mah z. B. mit `show databases;` die aktuellen Datenbanken anzeigen.
+Nun kann man z. B. mit `show databases;` die aktuellen Datenbanken anzeigen.
 Mit `use database databasename;` (z. B. user) kann man eine Datenbank auswählen und sich mit `show tables;` die Tabellen dieser Datenbank anzeigen lassen. 
 
 Nun setzt ihr ein SQL-Statement ab, welches z. B. so aussehen könnte `SELECT * FROM user where host = 'localhost'\G;`. Das \G steht hier für die formatierte Ausgabe.
