@@ -9,7 +9,7 @@ Vorab möchte ich darauf hinweisen, dass bei mir die Installation über sudo apt
 
 *2014-04-21 11:50:07 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).*
 
-Ich überlegte wie ich auf meinem Ubuntu 14.04 MySQL 5.6 installieren könnte.  Eventuell gibt es ja eine Installatonsanleitung auf der MySQL Website. E voila hier der Link: http://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/
+Ich überlegte wie ich auf meinem Ubuntu 14.04 MySQL 5.6 installieren könnte.  Eventuell gibt es ja eine Installatonsanleitung auf der MySQL Website. Et voilà hier der Link: http://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/
 
 Schritt 1: Download des MySQL Apt Repositories
 ----------------------------------------------
@@ -42,7 +42,7 @@ Wenn der MySQL Server nun läuft, gibt man im Terminal nach dem Prompt folgendes
 
 `shell> mysql -u root -p bzw. mysql -u root -peuerpassword` (ohne Leer direkt hinter dem p)
 
-Im ersten Fall, wird man nach dem Passwort gefragt (dieses hat ihr während der Installation eingegeben)
+Im ersten Fall, wird man nach dem Passwort gefragt (dieses wurde während der Installation eingegeben)
 
 Und schon erscheint das Command-line Tool von MySQL.
 
